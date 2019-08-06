@@ -15,7 +15,7 @@ This client provides following easy to implement functionality
 To install use
 
 ```markdown
-    go get github.com/sacOO7/gowebsocket
+    go get github.com/z9905080/gowebsocket
 ```
 
 Description
@@ -45,7 +45,7 @@ Create instance of `Websocket` by passing url of websocket-server end-point
     
     import (
     	"log"
-    	"github.com/sacOO7/gowebsocket"
+    	"github.com/z9905080/gowebsocket"
         "os"
         "os/signal"
     )
@@ -149,7 +149,7 @@ Create instance of `Websocket` by passing url of websocket-server end-point
 ```
 
 - ConnectionOptions needs to be applied before connecting to server
-- Please checkout [**examples/gowebsocket**](!https://github.com/sacOO7/GoWebsocket/tree/master/examples/gowebsocket) directory for detailed code..
+- Please checkout [**examples/gowebsocket**](!https://github.com/z9905080/GoWebsocket/tree/master/examples/gowebsocket) directory for detailed code..
 
 License
 -------
