@@ -147,11 +147,3 @@ Create instance of `Websocket` by passing url of websocket-server end-point
         Subprotocols: [] string{"chat","superchat"},
     }
 ```
-
-- ConnectionOptions needs to be applied before connecting to server
-- Please checkout [**examples/gowebsocket**](!https://github.com/z9905080/GoWebsocket/tree/master/examples/gowebsocket) directory for detailed code..
-
-License
--------
-Apache License, Version 2.0
-
