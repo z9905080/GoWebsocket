@@ -76,25 +76,25 @@ func (socket *Socket) setConnectionOptions() {
 	socket.WebsocketDialer.Subprotocols = socket.ConnectionOptions.Subprotocols
 }
 
-func (socket *Socket) Connect() {
+func (socket *Socket) Connect() error {
 	var err error
 	socket.setConnectionOptions()
 
 	socket.Conn, _, err = socket.WebsocketDialer.Dial(socket.Url, socket.RequestHeader)
-
 	if err != nil {
 		logger.Error.Println("Error while connecting to server ", err)
 		socket.IsConnected = false
 		if socket.OnConnectError != nil {
 			socket.OnConnectError(err, *socket)
 		}
-		return
+		return err
 	}
 
+	// Connect to Server
+	socket.IsConnected = true
 	logger.Info.Println("Connected to server")
 
 	if socket.OnConnected != nil {
-		socket.IsConnected = true
 		socket.OnConnected(*socket)
 	}
 
@@ -155,6 +155,8 @@ func (socket *Socket) Connect() {
 			}
 		}
 	}()
+
+	return nil
 }
 
 func (socket *Socket) SendText(message string) {
